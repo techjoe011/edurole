@@ -1,0 +1,16 @@
+.next/
+node_modules/
+
+.env
+.env.local
+.env.*.local
+
+.DS_Store
+.idea/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+figma-export/desktop/
+figma-export/mobile/
+figma-export/*.zip

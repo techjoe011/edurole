@@ -1,0 +1,24 @@
+{
+  "name": "edurole-redesign",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "export:figma": "node scripts/export-figma.mjs"
+  },
+  "dependencies": {
+    "leaflet": "^1.9.4",
+    "next": "16.2.9",
+    "react": "19.2.7",
+    "react-dom": "19.2.7"
+  },
+  "overrides": {
+    "postcss": "8.5.16"
+  },
+  "devDependencies": {
+    "playwright-core": "^1.61.1"
+  }
+}
