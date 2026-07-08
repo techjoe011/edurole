@@ -51,7 +51,7 @@ export default function ClientMap() {
           radius: 8,
           color: "#fff",
           weight: 3,
-          fillColor: "#00aeef",
+          fillColor: "#02BDFF",
           fillOpacity: 1,
           className: "institution-marker",
         })
