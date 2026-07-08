@@ -14,3 +14,4 @@ yarn-error.log*
 figma-export/desktop/
 figma-export/mobile/
 figma-export/*.zip
+.vercel
