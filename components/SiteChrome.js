@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import logo from "../edurole-logo.png";
+import MainNav from "./MainNav";
 import MobileNav from "./MobileNav";
 
 export const Arrow = () => <span aria-hidden="true">↗</span>;
@@ -17,19 +18,7 @@ export function SiteHeader() {
   return (
     <header className="nav">
       <Brand />
-      <nav aria-label="Main navigation">
-        <Link href="/">Home</Link>
-        <Link href="/about">About</Link>
-        <span className="nav-products">
-          <Link href="/products">Products</Link>
-          <span className="product-menu">
-            <Link href="/campus"><small>Full EMIS Suite</small><strong>EduRole Campus</strong><em>Universities & colleges</em></Link>
-            <Link href="/school"><small>Cloud SaaS</small><strong>EduRole School</strong><em>Primary & secondary</em></Link>
-            <Link href="/emis"><small>National Scale</small><strong>EduRole EMIS</strong><em>Ministries & regulators</em></Link>
-          </span>
-        </span>
-        <Link href="/clients">Clients</Link>
-      </nav>
+      <MainNav />
       <div className="nav-actions">
         <a className="login-link" href="https://cloud.edurole.com" target="_blank" rel="noreferrer">
           Cloud login

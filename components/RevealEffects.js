@@ -15,6 +15,7 @@ const targets = [
   ".product-page-card",
   ".value-section article",
   ".client-groups article",
+  ".client-groups details",
   ".contact-panel article",
   ".faq-list details",
   ".option-grid article",

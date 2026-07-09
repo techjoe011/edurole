@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Arrow, CtaBand, PageShell } from "./SiteChrome";
+import AnimatedStats from "./AnimatedStats";
 import FeatureExplorer from "./FeatureExplorer";
 
 function AudienceIcon({ index }) {
@@ -39,11 +40,7 @@ export default function ProductDetail({ product }) {
         </div>
       </section>
 
-      <section className="detail-stats">
-        {product.stats.map(([value, label]) => (
-          <div key={label}><strong>{value}</strong><span>{label}</span></div>
-        ))}
-      </section>
+      <AnimatedStats stats={product.stats} />
 
       <section className="content-section feature-content-section">
         <div className="content-intro">

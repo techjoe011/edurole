@@ -40,11 +40,27 @@ export default function ClientMap() {
 
     import("leaflet").then((L) => {
       if (cancelled || !element.current) return;
-      map = L.map(element.current, { scrollWheelZoom: false, zoomControl: true }).setView([-15.8, 28.8], 5);
+      map = L.map(element.current, {
+        attributionControl: false,
+        boxZoom: false,
+        doubleClickZoom: false,
+        dragging: false,
+        keyboard: false,
+        scrollWheelZoom: false,
+        tap: false,
+        touchZoom: false,
+        zoomControl: false,
+      });
       L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
         maxZoom: 18,
         attribution: "© OpenStreetMap contributors",
       }).addTo(map);
+
+      const bounds = L.latLngBounds(locations.map(([, lat, lng]) => [lat, lng]));
+      map.fitBounds(bounds, {
+        padding: [4, 4],
+        maxZoom: 6.65,
+      });
 
       locations.forEach(([name, lat, lng, place, category]) => {
         L.circleMarker([lat, lng], {

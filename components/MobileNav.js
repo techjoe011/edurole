@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 const links = [
@@ -15,6 +16,7 @@ const links = [
 ];
 
 export default function MobileNav() {
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
   return (
@@ -29,7 +31,14 @@ export default function MobileNav() {
       </button>
       <div className="mobile-menu-panel">
         {links.map(([href, label]) => (
-          <Link href={href} key={href} onClick={() => setOpen(false)}>{label}</Link>
+          <Link
+            className={href === "/" ? (pathname === "/" ? "is-active" : "") : (pathname === href || pathname.startsWith(`${href}/`) ? "is-active" : "")}
+            href={href}
+            key={href}
+            onClick={() => setOpen(false)}
+          >
+            {label}
+          </Link>
         ))}
         <a href="https://cloud.edurole.com" target="_blank" rel="noreferrer">Cloud login ↗</a>
       </div>
